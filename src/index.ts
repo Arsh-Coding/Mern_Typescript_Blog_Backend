@@ -16,6 +16,9 @@ app.use(cors());
 app.use(express.json());
 
 // Simple Test Route
+app.use((_: any, res: any) => {
+  res.status(404).json({ message: "Route not found" });
+});
 app.get("/", (_, res) => {
   res.send("Blog API is running 🚀");
 });
